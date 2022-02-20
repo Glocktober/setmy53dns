@@ -1,0 +1,1 @@
+from .set_my_rt53_dns import set_my_dns

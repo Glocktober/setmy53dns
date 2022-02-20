@@ -1,0 +1,9 @@
+venv
+__pycache__
+.cloudflare.cfg
+.aws
+pack
+dist
+junk
+*.egg-info
+.vscode
