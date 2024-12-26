@@ -1,20 +1,23 @@
-copyright='gunville 2022'
+copyright='gunville 2024'
 import os
 from socket import AF_INET6
 
 import requests
 import requests.packages.urllib3.util.connection as requests_cx
 
-find_ip_url = 'http://icanhazip.com'
-find_ip_url = os.environ.get('IPAPIURL',find_ip_url)
+find_ipv4_url = 'http://ipv4.icanhazip.com/'
+find_ipv6_url = 'http://ipv6.icanhazip.com/'
 
-def getMyIP(url=find_ip_url,ipv6=False):
+find_ipv4_url = os.environ.get('IPAPIURL', find_ipv4_url)
+find_ipv6_url = os.environ.get('IPV6APIURL', find_ipv6_url)
+
+def getMyIP(url=None,ipv6=False):
     """ Get this nods pulbic IP address """
 
     if ipv6:
-        return _get_ip6(url)
+        return _get_ip6(url=url if url else find_ipv6_url)
     else:
-        return _get_ip(url)
+        return _get_ip(url=url if url else find_ipv4_url)
 
 
 def _get_ip(url):

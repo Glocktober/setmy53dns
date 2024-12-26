@@ -1,4 +1,4 @@
-copyright='gunville 2022'
+copyright='gunville 2025'
 import argparse
 import socket
 import os
@@ -7,7 +7,7 @@ from datetime import datetime
 from r53dns import Arec, AAAArec
 from getmyip import getMyIP
 
-version=f'setmy53dns {copyright} v1'
+version=f'setmy53dns {copyright} v2'
 
 privmode = os.environ.get('PRIVMODE',False)
 

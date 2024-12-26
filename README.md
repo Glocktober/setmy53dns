@@ -43,18 +43,18 @@ optional arguments:
   -z ZONE, --zone ZONE  Route53 Zone to update (optional)
   -6                    Update AAAA record (default is A record)
 
-setmy53dns gunville 2022 v1
+setmy53dns gunville 2025 v2
 ```
 #### Automatic IP detection:
 
-By default `setmyip` automatically detects the public IP address by sending an HTTP request to [icanhazip.com](http://icanhazip.com). This site returns the IP address of the sender.
+By default `setmyip` automatically detects the public IP address by sending an HTTP request to [ipv4.icanhazip.com](http://ipv4.icanhazip.com). This site returns the IPv4 address of the sender.
 
 You can optionally use a different site to autodetect the public ip by setting the environment variable `IPAPIURL` to that URL:
 ```bash
 % IPAPIURL='http://api.ipify.org'
 % setmy53dns
 ```
-When ipv6 is selected with the `-6` switch automatic detection uses the ipv6 stack.  [icanhazip.com](http://icanhazip.com) works with both ipv4 and ipv6.
+When ipv6 is selected with the `-6` switch automatic detection uses the ipv6 stack.  [ipv6.icanhazip.com](http://ipv6.icanhazip.com). This can be overriden with the environment variable `IPV6APIURL`.
 
 If your host has multiple ip addresses or uses a proxy for web requests you will need to provide the ip address to use with the `--ip IP` command line switch.
 
